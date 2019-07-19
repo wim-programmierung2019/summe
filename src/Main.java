@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -12,7 +13,21 @@ public class Main {
         // Tipp: Die Methode scanner.readInt() liest eine neue Ganzzahl von der Konsole ein
 
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> zahlen = new ArrayList<Integer>();
         
+        int neueZahl;
+        do {
+            neueZahl = scanner.nextInt();
+            zahlen.add(neueZahl);
+        } while(neueZahl != 0);
+
+        String ausgabe = "";
+        int summe = 0;
+        for(int i = 0; i< zahlen.size(); i++){
+            summe += zahlen.get(i);
+            ausgabe += zahlen.get(i) + " + ";
+        }
+        System.out.println(ausgabe + "= " + summe);
     }
     
 }
